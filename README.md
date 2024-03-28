@@ -47,7 +47,7 @@ Analisando as idades dos nossos clientes foi possível concluir que a grande par
 ![Figure_1](https://github.com/GabrielTavaresGoldman/Analise-Dados-Credito/assets/149710830/2f9a1612-62fa-4ff9-b20c-093c6b00c6ce)
 ### Sexo
 Identifiquei que o sexo dos nossos clientes é bem semelhante sendo 52,3% são mulheres e 47,7% são homens.
-```sexo = credito1['sexo'].value_counts()
+``` sexo = credito1['sexo'].value_counts()
 sexo
 ```
 ### Escolaridade 
