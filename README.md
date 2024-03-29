@@ -7,7 +7,7 @@ Perguntas que queremos responder:
 - Clientes com faixas salariais maiores tem proprensão ao Defauft menor?
 - Qual é a distribuição da escolaridade entre os clientes?
 - Como é a distribuição do salário dos clientes?
-- Quantos dos nossos clientes estão em situação de inadimplência?
+- Quanto dos nossos clientes estão em situação de inadimplência?
 - Como é a distribuição dos limites de créditos dos clientes? E qual a relação desses limites com o salário anual deles?
 - O salário dos clientes tem impacto com a inatividade dos mesmos?
 - Clientes com salários maiores, tem uma quantidade maior de transações? E possuem maiores limites?
@@ -47,14 +47,15 @@ Analisando as idades dos nossos clientes foi possível concluir que a grande par
 ![Figure_1](https://github.com/GabrielTavaresGoldman/Analise-Dados-Credito/assets/149710830/2f9a1612-62fa-4ff9-b20c-093c6b00c6ce)
 ### Sexo
 Identifiquei que o sexo dos nossos clientes é bem semelhante sendo 52,3% são mulheres e 47,7% são homens.
-``` sexo = credito1['sexo'].value_counts()
+```sexo = credito1['sexo'].value_counts()
 sexo
 ```
 ### Escolaridade 
 Nessa análise foi possível observar que a grande parte dos clientes (37%) possuem mestrado, seguido de 23% que fizeram até o ensino médio, 17% não tem uma educação formal, 12% possuem graduação e 11% possuem doutorado.
 ### Renda
 Na renda percebi que as respostas dos clientes foram baseadas em faixas de valores, então decidi realizar uma segmentação dos dados para dividir os clientes em 3 categorias ( Baixa Renda - menos de $40K anual, Média Renda - Entre $40K - $120 anual e Alta Renda - mais de $120K anual)
-```credito1['salario_anual'].value_counts()
+```
+credito1['salario_anual'].value_counts()
 credito1['categoria_cliente'] = np.where(credito1['salario_anual']=='menos que $40K', 'baixa renda',
                                          np.where(credito1['salario_anual']=='$120K +','alta renda',
                                                   np.where(credito1['salario_anual'].isin(['$40K - $60K','$80K - $120K','$60K - $80K']),'media renda',None)))                                       
@@ -79,7 +80,7 @@ credito1['limite_credito'].describe()
 A média do limite de crédito é de aproximadamente $8500, o que representa um valor considerável. No entanto, devido à presença de outliers (valores extremos), essa medida pode ser distorcida. Por esse motivo, uma métrica mais apropriada para análise é a mediana, que representa o valor do limite de crédito que 50% dos clientes possuem. A mediana é de $4287, o que sugere um valor mais comum entre os clientes. A presença de outliers, como observado nos limites de crédito de até $34516, contribui para elevar a média, o desvio padrão, é de $9126, um valor que é maior até mesmo que a média, indicando uma grande disparidade nos dados.
 ## 5.2 Relação entre variáveis
 Primeiramente eu criei uma nova coluna e atribuí valores numéricos às faixas de salários anuais, começando de '1' para a faixa 'menos que $40K', até '5' para a faixa '$120K +'. Essa transformação foi feita com o intuito de poder analisar e comparar relações numéricas.
-```credito1['salario_anual_num'] =  np.where(credito1['salario_anual']=='menos que $40K', '1', np.where(credito1['salario_anual']=='$40K - $60K','2',
+``` credito1['salario_anual_num'] =  np.where(credito1['salario_anual']=='menos que $40K', '1', np.where(credito1['salario_anual']=='$40K - $60K','2',
     np.where(credito1['salario_anual']=='$60K - $80K','3',np.where(credito1['salario_anual']=='$80K - $120K','4',np.where(credito1['salario_anual']=='$120K +','5',None)))))
 credito1['salario_anual_num'] = pd.to_numeric(credito1['salario_anual_num'])                            
 credito1['salario_anual_num'].value_counts()
