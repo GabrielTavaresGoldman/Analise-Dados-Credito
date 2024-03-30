@@ -1,3 +1,4 @@
+![_6d364e2b-af16-4955-8b33-f2130cef11c4](https://github.com/GabrielTavaresGoldman/Analise-Dados-Credito/assets/149710830/51c3fb98-ae41-49ba-af1b-480ba9c0fc41)
 # Explorando Relações entre Dados Demográficos e Financeiros
  A análise abaixo foi realizada utilizando um conjunto de dados de crédito de uma instituição financeira público utilizado nos cursos Carreira de Analista de Dados, Python e SQL da EBAC.
 O objetivo da análise é compreender os padrões de clientes de uma instituição financeira, utilizando dados demográficos, comportamentais e financeiros. Essa compreensão pode ser crucial para diversas áreas, como marketing, atendimento ao cliente e gestão de riscos.
