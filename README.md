@@ -80,7 +80,8 @@ credito1['limite_credito'].describe()
 A média do limite de crédito é de aproximadamente $8500, o que representa um valor considerável. No entanto, devido à presença de outliers (valores extremos), essa medida pode ser distorcida. Por esse motivo, uma métrica mais apropriada para análise é a mediana, que representa o valor do limite de crédito que 50% dos clientes possuem. A mediana é de $4287, o que sugere um valor mais comum entre os clientes. A presença de outliers, como observado nos limites de crédito de até $34516, contribui para elevar a média, o desvio padrão, é de $9126, um valor que é maior até mesmo que a média, indicando uma grande disparidade nos dados.
 ## 5.2 Relação entre variáveis
 Primeiramente eu criei uma nova coluna e atribuí valores numéricos às faixas de salários anuais, começando de '1' para a faixa 'menos que $40K', até '5' para a faixa '$120K +'. Essa transformação foi feita com o intuito de poder analisar e comparar relações numéricas.
-``` credito1['salario_anual_num'] =  np.where(credito1['salario_anual']=='menos que $40K', '1', np.where(credito1['salario_anual']=='$40K - $60K','2',
+```
+credito1['salario_anual_num'] =  np.where(credito1['salario_anual']=='menos que $40K', '1', np.where(credito1['salario_anual']=='$40K - $60K','2',
     np.where(credito1['salario_anual']=='$60K - $80K','3',np.where(credito1['salario_anual']=='$80K - $120K','4',np.where(credito1['salario_anual']=='$120K +','5',None)))))
 credito1['salario_anual_num'] = pd.to_numeric(credito1['salario_anual_num'])                            
 credito1['salario_anual_num'].value_counts()
