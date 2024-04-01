@@ -34,7 +34,7 @@ credito['valor_transacoes_12m'] = pd.to_numeric(credito['valor_transacoes_12m'].
 print(credito.isnull().sum())
 ```
  ### Entendendo os dados 
-Além de identificar os dados, preciso entender com quais dados eu irei trabalhar, então separei as variáveis categóricas e analisei os valores únicos, percebi que existiam respostas 'na' que provavelmente foram de clientes que não preencheram todos os dados, e por ser uma análise é demográfica, decidi então criar um Data Frame sem esses valores (que poderiam distorcer a análise). 
+Além de identificar os dados, preciso entender com quais dados eu irei trabalhar, então separei as variáveis categóricas e analisei os valores únicos, percebi que existiam respostas 'na' que provavelmente foram de clientes que não preencheram todos os dados, e por ser uma análise demográfica, decidi então criar um Data Frame sem esses valores (que poderiam distorcer a análise). 
 ``` 
 categoricas = ['sexo','escolaridade','estado_civil','salario_anual', 'tipo_cartao'] 
 for coluna in categoricas:
